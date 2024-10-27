@@ -17,7 +17,7 @@ def generate_data(num_samples=300):
 
 
 def main():
-    st.set_page_config(layout="wide")
+    st.set_page_config(page_title="Polynomial and Splines Regression", layout="wide")
     st.title("Polynomial and Spline Regression Demo")
     st.markdown(
         "##### By: Dharyll Prince M. Abellana | Assistant Professor of Computer Science | University of the Philippines Cebu",
