@@ -7,8 +7,7 @@ from extended_linear_models import PolynomialRegression
 np.random.seed(1111)
 
 
-def generate_data(samples=300):
-    num_samples = 300
+def generate_data(num_samples=300):
     f = lambda x: np.sin(2 * x) + np.log(10 * x)
     X = np.random.uniform(0, 5, size=num_samples)
     Y_true = np.array(list(map(f, X)))
