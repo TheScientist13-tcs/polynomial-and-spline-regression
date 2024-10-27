@@ -66,7 +66,7 @@ def main():
                 x=X,
                 y=Y_obs,
                 mode="markers",
-                marker=dict(opacity=0.8),
+                marker=dict(opacity=0.7),
                 name="Observations",
                 line=dict(color="#D2D3C9"),
             )
