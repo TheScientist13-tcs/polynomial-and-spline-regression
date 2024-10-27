@@ -39,7 +39,7 @@ def main():
                 r"""Set Knot 1 ($\xi_1$)""", min_value=0.0, max_value=np.max(X), value=0.1
             )
             knot_2 = st.slider(
-                r"""Set Knot 2 ($\xi_2$)""", min_value=0.0, max_value=np.max(X), value=1
+                r"""Set Knot 2 ($\xi_2$)""", min_value=0.0, max_value=np.max(X), value=1.0
             )
             knot_locs = [knot_1, knot_2]
             cub_reg = NaturalCubicSplines(knot_locs).fit(X, Y_obs)
