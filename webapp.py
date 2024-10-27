@@ -1,10 +1,8 @@
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 from extended_linear_models import NaturalCubicSplines
 from extended_linear_models import PolynomialRegression
-import plotly.express as px
 
 np.random.seed(1111)
 
