@@ -3,6 +3,7 @@ import numpy as np
 import plotly.graph_objects as go
 from extended_linear_models import NaturalCubicSplines
 from extended_linear_models import PolynomialRegression
+from sklearn.metrics import mean_squared_error
 
 np.random.seed(1111)
 
@@ -35,10 +36,16 @@ def main():
         if not hide_spline:
             st.header("Set Spline Knots")
             knot_1 = st.slider(
-                r"""Set Knot 1 ($\xi_1$)""", min_value=0.0, max_value=np.max(X), value=0.1
+                r"""Set Knot 1 ($\xi_1$)""",
+                min_value=0.0,
+                max_value=np.max(X),
+                value=0.1,
             )
             knot_2 = st.slider(
-                r"""Set Knot 2 ($\xi_2$)""", min_value=0.0, max_value=np.max(X), value=1.0
+                r"""Set Knot 2 ($\xi_2$)""",
+                min_value=0.0,
+                max_value=np.max(X),
+                value=1.0,
             )
             knot_locs = [knot_1, knot_2]
             cub_reg = NaturalCubicSplines(knot_locs).fit(X, Y_obs)
@@ -52,6 +59,9 @@ def main():
             )
             poly_reg = PolynomialRegression(degree=p).fit(x=X, y=Y_obs)
             poly_pred = poly_reg.predict(X)
+            mse_poly = np.round(
+                float(mean_squared_error(y_true=Y_obs, y_pred=poly_pred)), 3
+            )
 
     ## Plot
 
@@ -129,7 +139,7 @@ def main():
             go.Scatter(
                 x=sorted_x,
                 y=sorted_y_poly,
-                name=f"Polynomial (p={p})",
+                name=f"Polynomial (p={p}, mse={mse_poly})",
                 line=dict(color="#F6830F"),
             )
         )
