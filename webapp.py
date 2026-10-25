@@ -131,7 +131,7 @@ def main():
         if not hide_poly:
             st.header("Set Polynomial Degree")
 
-            # Capping the max degree at 40 to prevent Float64 overflow while still showing massive overfitting
+            # Capping the max degree at 40 to prevent Float64 overflow (still shows interpolation to demonstrate overfitting/memorization)
             max_deg = min(40, n_train - 1)
             p = st.number_input(
                 f"Set polynomial degree (Capped at 40 for float stability)",
