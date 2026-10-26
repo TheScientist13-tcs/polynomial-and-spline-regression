@@ -51,7 +51,7 @@ def main():
         hide_scatter = st.checkbox("Hide Scatter")
         hide_true_func = st.checkbox("Hide True Function")
         hide_poly = st.checkbox("Hide Polynomial Regression")
-        hide_spline = st.checkbox("Hide Spline Regression")
+        hide_spline = st.checkbox("Hide Spline Regression", value=True)
 
         ## Fit spline
         if not hide_spline:
